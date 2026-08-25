@@ -132,5 +132,3 @@ gogio -target android -arch arm64,arm -appid com.kripdroid.app -minsdk 24 -o Kri
    adb install -r KripDroid.apk
    ```
 4. Buka aplikasi **KripDroid** dari menu aplikasi Android Anda.
-
-(Btw sebenarnya release binary nya ada exe, ga cuman apk, cuman saya males, hehe)
