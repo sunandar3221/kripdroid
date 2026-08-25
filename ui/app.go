@@ -133,7 +133,7 @@ func (a *App) layoutTopAppBar(gtx layout.Context) layout.Dimensions {
 				Alignment: layout.Middle,
 				Spacing:   layout.SpaceBetween,
 			}.Layout(gtx,
-				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+				layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
 					return layout.Flex{
 						Axis:      layout.Horizontal,
 						Alignment: layout.Middle,

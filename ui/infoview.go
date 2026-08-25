@@ -128,11 +128,13 @@ func (iv *InfoView) layoutCategoryList(gtx layout.Context, th *M3Theme, cat cryp
 									Alignment: layout.Middle,
 									Spacing:   layout.SpaceBetween,
 								}.Layout(gtx,
-									layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-										lbl := material.Label(th.MaterialTheme, unit.Sp(12), item.Name)
-										lbl.Color = th.OnSurface
-										lbl.Font.Weight = font.Bold
-										return lbl.Layout(gtx)
+									layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
+										return layout.Inset{Right: unit.Dp(8)}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+											lbl := material.Label(th.MaterialTheme, unit.Sp(12), item.Name)
+											lbl.Color = th.OnSurface
+											lbl.Font.Weight = font.Bold
+											return lbl.Layout(gtx)
+										})
 									}),
 									layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 										return DrawSecurityBadge(gtx, th, string(item.Category), item.SecurityRating)
